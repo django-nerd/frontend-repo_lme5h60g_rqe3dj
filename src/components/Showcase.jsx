@@ -28,9 +28,9 @@ export default function Showcase() {
               </div>
             ))}
 
-            <div className="rounded-xl border border-rose-200 bg-gradient-to-br from-rose-50 to-white p-6">
-              <h3 className="font-semibold text-rose-700">Standards & Compliance</h3>
-              <p className="mt-2 text-rose-700/80 text-sm">Certified to AS/NZS 61439 with detailed compliance documentation, routine verification, and quality assurance across production.</p>
+            <div className="rounded-xl border border-blue-200 bg-gradient-to-br from-blue-50 to-white p-6">
+              <h3 className="font-semibold text-blue-800">Standards & Compliance</h3>
+              <p className="mt-2 text-blue-800/80 text-sm">Certified to AS/NZS 61439 with detailed compliance documentation, routine verification, and quality assurance across production.</p>
             </div>
           </div>
         </div>

@@ -34,8 +34,8 @@ export default function Features() {
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="group rounded-xl border border-slate-200 p-6 hover:shadow-lg hover:border-rose-200 transition-all">
-              <div className="h-11 w-11 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center mb-4 group-hover:bg-rose-100">
+            <div key={title} className="group rounded-xl border border-slate-200 p-6 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="h-11 w-11 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center mb-4 group-hover:bg-blue-100">
                 <Icon size={22} />
               </div>
               <h3 className="font-semibold text-slate-900">{title}</h3>

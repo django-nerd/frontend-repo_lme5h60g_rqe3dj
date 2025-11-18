@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="h-8 w-8 rounded-md bg-gradient-to-br from-rose-500 to-rose-600 shadow-sm" />
+            <div className="h-8 w-8 rounded-md bg-gradient-to-br from-blue-800 to-blue-600 shadow-sm" />
             <span className="font-semibold tracking-tight text-slate-900">Voltix Switchboards</span>
           </div>
 
@@ -31,7 +31,7 @@ export default function Navbar() {
             <NavLink href="#contact">Contact</NavLink>
             <a
               href="#quote"
-              className="inline-flex items-center rounded-md bg-rose-600 px-4 py-2 text-white shadow-sm hover:bg-rose-700 transition-colors"
+              className="inline-flex items-center rounded-md bg-blue-800 px-4 py-2 text-white shadow-sm hover:bg-blue-900 transition-colors"
             >
               Request a Quote
             </a>
@@ -56,7 +56,7 @@ export default function Navbar() {
             <NavLink href="#contact">Contact</NavLink>
             <a
               href="#quote"
-              className="inline-flex w-full items-center justify-center rounded-md bg-rose-600 px-4 py-2 text-white shadow-sm hover:bg-rose-700"
+              className="inline-flex w-full items-center justify-center rounded-md bg-blue-800 px-4 py-2 text-white shadow-sm hover:bg-blue-900"
             >
               Request a Quote
             </a>

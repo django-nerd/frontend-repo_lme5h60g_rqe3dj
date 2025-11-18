@@ -18,13 +18,13 @@ export default function Contact() {
 
             <div className="mt-8 rounded-xl border border-slate-200 p-6">
               <form onSubmit={onSubmit} className="grid grid-cols-1 gap-4">
-                <input className="rounded-md border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose-500" placeholder="Full name" required />
-                <input className="rounded-md border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose-500" type="email" placeholder="Work email" required />
-                <input className="rounded-md border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose-500" placeholder="Company" />
-                <textarea rows={5} className="rounded-md border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose-500" placeholder="Project details (e.g., 3200A MSB, Form 4b, IP54, 65kA)" />
-                <button className="inline-flex items-center justify-center rounded-md bg-rose-600 px-6 py-3 text-white shadow-sm hover:bg-rose-700 transition-colors">Send Request</button>
+                <input className="rounded-md border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600/60" placeholder="Full name" required />
+                <input className="rounded-md border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600/60" type="email" placeholder="Work email" required />
+                <input className="rounded-md border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600/60" placeholder="Company" />
+                <textarea rows={5} className="rounded-md border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600/60" placeholder="Project details (e.g., 3200A MSB, Form 4b, IP54, 65kA)" />
+                <button className="inline-flex items-center justify-center rounded-md bg-blue-800 px-6 py-3 text-white shadow-sm hover:bg-blue-900 transition-colors">Send Request</button>
               </form>
-              {status && <p className="mt-4 text-sm text-rose-700">{status}</p>}
+              {status && <p className="mt-4 text-sm text-blue-800">{status}</p>}
             </div>
           </div>
 
