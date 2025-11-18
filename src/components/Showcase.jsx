@@ -3,19 +3,19 @@ export default function Showcase() {
     {
       title: 'Main Switchboards (MSB)',
       desc: 'High-capacity sections with segregated busbar systems and comprehensive protection.',
-      img: 'https://images.unsplash.com/photo-1581093588401-8d9a17f8b7c6?auto=format&fit=crop&w=1200&q=60',
+      img: 'https://images.unsplash.com/photo-1581093588401-8d9a17f8b7c6?auto=format&fit=crop&w=1200&q=60&format=webp',
       alt: 'Main switchboard cabinets in an industrial facility'
     },
     {
       title: 'Motor Control Centres (MCC)',
       desc: 'Form 3b and 4b designs with withdrawable options and robust thermal design.',
-      img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60',
+      img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60&format=webp',
       alt: 'Motor control panels with wiring and controls'
     },
     {
       title: 'Distribution Boards (DB)',
       desc: 'Compact, serviceable, and scalable for commercial and light industrial uses.',
-      img: 'https://images.unsplash.com/photo-1581091019337-1d3a5f2fc6b0?auto=format&fit=crop&w=1200&q=60',
+      img: 'https://images.unsplash.com/photo-1581091019337-1d3a5f2fc6b0?auto=format&fit=crop&w=1200&q=60&format=webp',
       alt: 'Distribution boards with breakers and labels'
     }
   ]
@@ -37,18 +37,20 @@ export default function Showcase() {
 
           <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
             {items.map((i) => (
-              <div key={i.title} className="rounded-xl border border-slate-200 bg-white p-0 hover:shadow-lg transition-shadow overflow-hidden">
+              <article key={i.title} className="rounded-xl border border-slate-200 bg-white p-0 hover:shadow-lg transition-shadow overflow-hidden">
                 <img
                   src={i.img}
                   alt={i.alt}
                   loading="lazy"
+                  width="1200"
+                  height="300"
                   className="h-40 w-full object-cover"
                 />
                 <div className="p-6">
                   <h3 className="font-semibold text-slate-900">{i.title}</h3>
                   <p className="mt-2 text-slate-600 text-sm">{i.desc}</p>
                 </div>
-              </div>
+              </article>
             ))}
 
             <div className="rounded-xl border border-blue-200 bg-gradient-to-br from-blue-50 to-white p-6">

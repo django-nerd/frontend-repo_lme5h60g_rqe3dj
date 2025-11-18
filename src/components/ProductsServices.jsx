@@ -1,5 +1,5 @@
-import { useRef } from 'react'
-import { motion } from 'framer-motion'
+import { useRef, useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
 import { Factory, Settings, Gauge, CircuitBoard, Workflow, Sparkles, Bolt, Building2, Wrench, ClipboardCheck, Ruler, RefreshCw, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const products = [
@@ -62,11 +62,67 @@ function Card({ icon: Icon, title, desc, img }) {
 export default function ProductsServices() {
   const prodRef = useRef(null)
   const svcRef = useRef(null)
+  const prodControls = useAnimation()
+  const svcControls = useAnimation()
 
   const scrollByAmount = (ref, amount) => {
     if (!ref.current) return
     ref.current.scrollBy({ left: amount, behavior: 'smooth' })
   }
+
+  // Drag/Swipe support using pointer events + framer inertia
+  useEffect(() => {
+    const makeDraggable = (el) => {
+      if (!el) return
+      let isDown = false
+      let startX = 0
+      let scrollLeft = 0
+
+      const onDown = (e) => {
+        isDown = true
+        startX = e.pageX || (e.touches && e.touches[0].pageX) || 0
+        scrollLeft = el.scrollLeft
+        el.classList.add('cursor-grabbing')
+      }
+
+      const onLeaveUp = () => {
+        isDown = false
+        el.classList.remove('cursor-grabbing')
+      }
+
+      const onMove = (e) => {
+        if (!isDown) return
+        const x = e.pageX || (e.touches && e.touches[0].pageX) || 0
+        const walk = (x - startX) * 1.2
+        el.scrollLeft = scrollLeft - walk
+      }
+
+      el.addEventListener('mousedown', onDown)
+      el.addEventListener('mouseleave', onLeaveUp)
+      el.addEventListener('mouseup', onLeaveUp)
+      el.addEventListener('mousemove', onMove)
+      el.addEventListener('touchstart', onDown, { passive: true })
+      el.addEventListener('touchend', onLeaveUp)
+      el.addEventListener('touchmove', onMove, { passive: true })
+
+      return () => {
+        el.removeEventListener('mousedown', onDown)
+        el.removeEventListener('mouseleave', onLeaveUp)
+        el.removeEventListener('mouseup', onLeaveUp)
+        el.removeEventListener('mousemove', onMove)
+        el.removeEventListener('touchstart', onDown)
+        el.removeEventListener('touchend', onLeaveUp)
+        el.removeEventListener('touchmove', onMove)
+      }
+    }
+
+    const cleanupA = makeDraggable(prodRef.current)
+    const cleanupB = makeDraggable(svcRef.current)
+    return () => {
+      cleanupA && cleanupA()
+      cleanupB && cleanupB()
+    }
+  }, [])
 
   return (
     <section id="products" className="py-20 bg-slate-50">
@@ -87,7 +143,7 @@ export default function ProductsServices() {
           </div>
 
           <motion.div
-            className="mt-4 flex snap-x snap-mandatory overflow-x-auto scrollbar-thin scrollbar-thumb-slate-300/80 hover:scrollbar-thumb-slate-400 scrollbar-track-transparent"
+            className="mt-4 flex snap-x snap-mandatory overflow-x-auto scrollbar-thin scrollbar-thumb-slate-300/80 hover:scrollbar-thumb-slate-400 scrollbar-track-transparent select-none"
             ref={prodRef}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -118,7 +174,7 @@ export default function ProductsServices() {
           </div>
 
           <motion.div
-            className="mt-4 flex snap-x snap-mandatory overflow-x-auto scrollbar-thin scrollbar-thumb-slate-300/80 hover:scrollbar-thumb-slate-400 scrollbar-track-transparent"
+            className="mt-4 flex snap-x snap-mandatory overflow-x-auto scrollbar-thin scrollbar-thumb-slate-300/80 hover:scrollbar-thumb-slate-400 scrollbar-track-transparent select-none"
             ref={svcRef}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
