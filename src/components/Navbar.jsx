@@ -26,8 +26,8 @@ export default function Navbar() {
 
           <nav className="hidden md:flex items-center gap-8">
             <NavLink href="#solutions">Solutions</NavLink>
+            <NavLink href="#products">Products</NavLink>
             <NavLink href="#capabilities">Capabilities</NavLink>
-            <NavLink href="#standards">Standards</NavLink>
             <NavLink href="#contact">Contact</NavLink>
             <a
               href="#quote"
@@ -51,8 +51,8 @@ export default function Navbar() {
         <div className="md:hidden border-t border-slate-200/70">
           <div className="px-4 py-3 space-y-3 bg-white">
             <NavLink href="#solutions">Solutions</NavLink>
+            <NavLink href="#products">Products</NavLink>
             <NavLink href="#capabilities">Capabilities</NavLink>
-            <NavLink href="#standards">Standards</NavLink>
             <NavLink href="#contact">Contact</NavLink>
             <a
               href="#quote"

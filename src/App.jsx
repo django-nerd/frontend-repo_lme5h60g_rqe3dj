@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import Showcase from './components/Showcase'
+import ProductsServices from './components/ProductsServices'
 import Contact from './components/Contact'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <main>
         <Hero />
         <Features />
+        <ProductsServices />
         <Showcase />
         <Contact />
         <footer className="py-10 border-t border-slate-200 bg-white" id="quote">
