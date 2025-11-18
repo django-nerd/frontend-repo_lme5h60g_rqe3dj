@@ -5,6 +5,7 @@ import Showcase from './components/Showcase'
 import ProductsServices from './components/ProductsServices'
 import ParallaxBand from './components/ParallaxBand'
 import Contact from './components/Contact'
+import LogoMarquee from './components/LogoMarquee'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <ParallaxBand />
         <Features />
+        <LogoMarquee />
         <ProductsServices />
         <ParallaxBand />
         <Showcase />

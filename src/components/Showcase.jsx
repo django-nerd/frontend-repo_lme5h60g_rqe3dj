@@ -3,22 +3,28 @@ export default function Showcase() {
     {
       title: 'Main Switchboards (MSB)',
       desc: 'High-capacity sections with segregated busbar systems and comprehensive protection.',
-      img: 'https://images.unsplash.com/photo-1581093588401-8d9a17f8b7c6?auto=format&fit=crop&w=1200&q=60&format=webp',
+      base: 'https://images.unsplash.com/photo-1581093588401-8d9a17f8b7c6?auto=format&fit=crop',
       alt: 'Main switchboard cabinets in an industrial facility'
     },
     {
       title: 'Motor Control Centres (MCC)',
       desc: 'Form 3b and 4b designs with withdrawable options and robust thermal design.',
-      img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60&format=webp',
+      base: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop',
       alt: 'Motor control panels with wiring and controls'
     },
     {
       title: 'Distribution Boards (DB)',
       desc: 'Compact, serviceable, and scalable for commercial and light industrial uses.',
-      img: 'https://images.unsplash.com/photo-1581091019337-1d3a5f2fc6b0?auto=format&fit=crop&w=1200&q=60&format=webp',
+      base: 'https://images.unsplash.com/photo-1581091019337-1d3a5f2fc6b0?auto=format&fit=crop',
       alt: 'Distribution boards with breakers and labels'
     }
   ]
+
+  const srcSet = (base) => [
+    `${base}&w=480&q=60&format=webp 480w`,
+    `${base}&w=768&q=60&format=webp 768w`,
+    `${base}&w=1200&q=60&format=webp 1200w`
+  ].join(', ')
 
   return (
     <section id="capabilities" className="py-20 bg-slate-50">
@@ -39,7 +45,9 @@ export default function Showcase() {
             {items.map((i) => (
               <article key={i.title} className="rounded-xl border border-slate-200 bg-white p-0 hover:shadow-lg transition-shadow overflow-hidden">
                 <img
-                  src={i.img}
+                  src={`${i.base}&w=1200&q=60&format=webp`}
+                  srcSet={srcSet(i.base)}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 640px"
                   alt={i.alt}
                   loading="lazy"
                   width="1200"
